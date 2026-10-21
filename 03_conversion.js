@@ -54,3 +54,37 @@ let isLoggedIn3 = " "     //"123","ab","   "
 let valueInBoolean3 = Boolean(isLoggedIn3);
 console.log(valueInBoolean3);
 
+
+
+// ************************ Operations  ************************
+let a = "1" + 2 + 2 ;
+let b = 1 + 2 + "2";
+let c = 1 + "2" + 1;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+
+console.log(+true);
+//console.log(true+);  NOT ALLOWED ----ERROR----
+
+console.log(+"");
+
+//*****************************PREFIX and POSTFIX OPERATOR****************/
+
+let x = 3;
+const y = x++;
+
+console.log(`x:${x}, y:${y}`);
+// Expected output: "x:4, y:3"
+
+let a1 = 3;
+const b1 = ++a1;
+
+console.log(`a:${a1}, b:${b1}`);
+// Expected output: "a1:4, b1:4"
+
