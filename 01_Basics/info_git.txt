@@ -1,0 +1,87 @@
+3. How we fixed it, step by step
+Step 1 — Checked the files
+We used:
+pwd
+ls -la
+ls -la 01_basics/
+
+
+These commands helped us understand where we were and which files were present.
+- pwd shows your current directory.
+- ls -la lists files, including hidden files such as .git.
+- ls -la 01_basics/ lists the contents of the folder.
+Lesson: Before changing anything, check your current directory and file structure.
+Step 2 — Recovered the accidentally renamed file
+We found a file called 01_basics that actually contained the code for 01_variable.js.
+
+We renamed it back:
+mv 01_basics/01_basics 01_basics/01_variable.js
+
+
+Lesson: If a file appears missing, inspect the directory before recreating or deleting anything. The file may simply have been renamed or moved.
+Step 3 — Moved the Git repository root
+First, we confirmed that JS did not already have a .git directory.
+
+Then we ran:
+mv 01_basics/.git .git
+
+
+This moved the existing Git metadata to the parent folder, preserving the repository's existing history.
+
+Afterward, git status showed the old files as deleted and 01_basics/ as untracked. That was expected: Git was now seeing the same files at their new paths.
+
+Lesson: When changing a repository's root directory, Git may initially report many deletions and untracked files. Check the status before committing.
+Step 4 — Staged and committed the new structure
+We used:
+git add -A
+git commit -m "Organize JavaScript files into 01_basics folder"
+
+
+- git add -A stages additions, modifications, and deletions.
+- git commit saves the staged changes as a snapshot.
+Git can recognize files as renames when comparing the old and new snapshots.
+Step 5 — Handled the remote branch problem
+When we tried to push, Git rejected the push because GitHub had a commit that our local branch didn't have.
+
+The remote commit was:
+65ea05c Create temp.txt
+
+
+Our local commit was:
+fee6c2e Organize JavaScript files into 01_basics folder
+
+
+Both commits existed, but neither branch contained the other's newest commit.
+
+We fetched the remote history:
+git fetch origin
+
+
+Then we merged the remote branch:
+git merge origin/main
+
+
+Git tried to open Vim to ask for a merge commit message, but the editor failed. We completed the existing merge with:
+git -c core.editor=true commit
+
+
+This created the merge commit 58d5787, preserving both histories.
+
+Finally, we pushed:
+git push origin main
+
+
+It succeeded because the local branch now contained the remote commit as well as our own changes.
+4. The Git commands you should remember
+Here is your practical reference for future situations.
+Command	What it does
+pwd	Shows your current directory
+ls -la	Lists files, including hidden files
+git status	Shows changes and branch status
+git log --oneline --graph --all	Visualizes local and remote commit history
+git fetch origin	Downloads remote history without merging
+git add -A	Stages all changes
+git commit -m "message"	Saves a commit
+git pull	Fetches and integrates remote changes
+git push	Uploads local commits to the remote repository
+git merge --abort	Cancels an in-progress merge when possible
