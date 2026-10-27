@@ -35,6 +35,19 @@ const max = 20;
 console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 
 
+console.log(typeof null);
+console.log(typeof NaN);
+console.log(Number("25"));
+console.log(Number("25abc"));
+console.log(Boolean("false"))
+
+console.log(5 == "5");
+console.log(5 === "5");
+console.log(0 == false);
+console.log(null == undefined);
+console.log(null === undefined);
+
+
 
 
 
