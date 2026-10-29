@@ -1,0 +1,375 @@
+# JavaScript Practice Exercises
+## Topics: Type Conversion, Data Types, Comparisons, Strings, Numbers, Stack & Heap Memory
+
+Goal: Strengthen JavaScript fundamentals by solving problems independently without watching tutorials.
+
+RULES:
+1. Try to solve every exercise yourself before searching for help.
+2. Predict the output before running the code.
+3. Use console.log() to debug your code.
+4. If stuck, ask for hints instead of directly looking at the solution.
+5. Write down what you learned from each exercise.
+
+--------------------------------------------------
+LEVEL 1: TYPE CONVERSION, COMPARISONS & DATA TYPES
+--------------------------------------------------
+
+EXERCISE 1: Guess the Output (Easy)
+
+Predict the output of each statement before running the code.
+
+console.log(typeof null);
+console.log(typeof NaN);
+console.log(Number("25"));
+console.log(Number("25abc"));
+console.log(Boolean("false"));
+
+Tasks:
+- Write the expected output for each statement.
+- Run the code and compare the actual output with your prediction.
+- Explain why each output occurs.
+
+EXERCISE 2: Fix the Comparison (Easy)
+
+Analyze the following code:
+
+console.log(5 == "5");
+console.log(5 === "5");
+console.log(0 == false);
+console.log(null == undefined);
+console.log(null === undefined);
+
+Tasks:
+- Predict the output of every statement.
+- Explain the difference between == and ===.
+- Identify which comparisons use type coercion.
+- Rewrite the comparisons using strict equality wherever appropriate.
+
+EXERCISE 3: Age Eligibility Checker (Easy)
+
+Create a program that checks whether a person is eligible to register based on their age.
+
+Requirements:
+- Store the age initially as a string, for example: "21".
+- Convert the string into a number.
+- If the age is 18 or greater, print "Eligible to register".
+- Otherwise, print "Not eligible to register".
+- Reject invalid input, such as "abc", an empty string, or a negative age.
+
+Example:
+Input: "21"
+Output: Eligible to register
+
+Input: "16"
+Output: Not eligible to register
+
+Input: "abc"
+Output: Invalid age
+
+EXERCISE 4: Price Conversion (Easy)
+
+Create a program that calculates the final price after adding 18% tax.
+
+Starter code:
+
+const price = "1250";
+
+Requirements:
+- Convert the price string into a number.
+- Calculate 18% tax.
+- Add the tax to the original price.
+- Print the final price.
+
+Expected output:
+Original price: 1250
+Tax: 225
+Final price: 1475
+
+EXERCISE 5: Truthy or Falsy (Medium)
+
+Write a function named checkValue(value) that identifies whether a value is truthy or falsy.
+
+Test the function with these values:
+
+0
+""
+"0"
+false
+true
+null
+undefined
+NaN
+[]
+{}
+
+Requirements:
+- Print the input value.
+- Print whether it is truthy or falsy.
+- Explain why an empty array and an empty object are truthy in JavaScript.
+
+EXERCISE 6: Datatype Inspector (Medium)
+
+Write a function named inspectValue(value).
+
+Requirements:
+- Print the value passed to the function.
+- Print its data type using typeof.
+- Handle null separately.
+- Identify arrays separately from ordinary objects.
+- Test with a string, number, boolean, undefined, null, array and object.
+
+Example:
+inspectValue("Hello");
+inspectValue(100);
+inspectValue(true);
+inspectValue(null);
+inspectValue([1, 2, 3]);
+inspectValue({ name: "Rahul" });
+
+--------------------------------------------------
+LEVEL 2: STRINGS & NUMBERS
+--------------------------------------------------
+
+EXERCISE 7: Reverse a String (Easy)
+
+Write a program that reverses a string without using a built-in reverse() method.
+
+Example:
+Input: "javascript"
+Output: "tpircsavaj"
+
+Requirements:
+- Solve it using a loop.
+- Try a second solution using built-in array methods.
+- Test with an empty string and a single-character string.
+
+EXERCISE 8: Count Vowels (Easy)
+
+Write a function that counts the vowels in a string.
+
+Example:
+Input: "JavaScript Developer"
+
+Requirements:
+- Count a, e, i, o and u.
+- Handle uppercase and lowercase letters.
+- Return the total number of vowels.
+- Test with a string containing no vowels.
+
+EXERCISE 9: Palindrome Checker (Medium)
+
+Write a function that checks whether a word reads the same forwards and backwards.
+
+Examples:
+Input: "level"
+Output: true
+
+Input: "hello"
+Output: false
+
+Requirements:
+- Ignore letter case.
+- Try solving without using reverse().
+- Bonus: Ignore spaces and punctuation when checking sentences.
+
+EXERCISE 10: Word Counter (Medium)
+
+Write a program that counts the number of words in a sentence.
+
+Example:
+Input: "JavaScript is fun to learn"
+Output: 5
+
+Requirements:
+- Handle multiple spaces between words.
+- Handle spaces at the beginning and end.
+- Handle an empty string.
+- Try using split() and trim().
+
+EXERCISE 11: Number Breakdown (Medium)
+
+Given the number 4827, perform the following operations:
+
+1. Calculate the sum of its digits.
+2. Reverse the number.
+3. Count the number of digits.
+
+Expected output:
+Original number: 4827
+Sum of digits: 21
+Reversed number: 7284
+Number of digits: 4
+
+Requirements:
+- First solve it using strings.
+- Then try solving it using mathematical operations such as %, Math.floor() and division.
+- Bonus: Handle negative numbers and zero.
+
+EXERCISE 12: Bill Splitter (Medium)
+
+Create a program that splits a restaurant bill among multiple people.
+
+Requirements:
+- Accept the bill amount.
+- Accept the tip percentage.
+- Accept the number of people.
+- Calculate the tip amount.
+- Calculate the total bill.
+- Calculate each person's share.
+- Validate the inputs, including rejecting zero or negative people counts.
+
+Example:
+Bill amount: 1000
+Tip percentage: 10
+Number of people: 4
+
+Expected output:
+Tip: 100
+Total bill: 1100
+Each person pays: 275
+
+--------------------------------------------------
+LEVEL 3: STACK, HEAP & REFERENCES
+--------------------------------------------------
+
+EXERCISE 13: Primitive Copying (Easy)
+
+Analyze the following code:
+
+let a = 10;
+let b = a;
+b = 20;
+
+console.log(a, b);
+
+Tasks:
+- Predict the output.
+- Explain why changing b does not change a.
+- Repeat the exercise with strings and booleans.
+- Explain how primitive values behave when assigned to another variable.
+
+EXERCISE 14: Object References (Medium)
+
+Analyze the following code:
+
+const user1 = { name: "Rahul" };
+const user2 = user1;
+
+user2.name = "Aman";
+
+console.log(user1.name);
+console.log(user2.name);
+
+Tasks:
+- Predict both outputs.
+- Explain why modifying user2 also affects the object accessed through user1.
+- Create a separate object copy so changing one object's name does not affect the other.
+
+EXERCISE 15: Array References (Medium)
+
+Analyze the following code:
+
+const first = [1, 2, 3];
+const second = first;
+
+second.push(4);
+
+console.log(first);
+console.log(second);
+
+Tasks:
+- Predict both outputs.
+- Explain why both variables access the same array.
+- Create an independent copy of the array.
+- Verify that modifying the copied array does not modify the original array.
+
+EXERCISE 16: Shallow Copy vs. Deep Copy (Hard)
+
+Analyze the following code:
+
+const original = {
+    name: "Rahul",
+    address: {
+        city: "Kanpur"
+    }
+};
+
+const copy = { ...original };
+
+copy.name = "Aman";
+copy.address.city = "Mohali";
+
+console.log(original);
+console.log(copy);
+
+Tasks:
+- Predict both outputs.
+- Explain why changing copy.name does not change original.name.
+- Explain why changing copy.address.city changes the nested city in the original object.
+- Create a deep copy using structuredClone().
+- Repeat the modifications and compare the results.
+
+--------------------------------------------------
+LEVEL 4: MINI-PROJECT
+--------------------------------------------------
+
+PROJECT: SMART BILL CALCULATOR
+
+Build a bill calculator using JavaScript. Initially, use the browser console or Node.js. Do not create a user interface until the calculation logic works correctly.
+
+REQUIREMENTS:
+
+1. Accept a bill amount.
+2. Accept a tip percentage.
+3. Accept the number of people sharing the bill.
+4. Convert string inputs into numbers.
+5. Reject invalid inputs.
+6. Reject negative bill amounts and negative tip percentages.
+7. Reject zero or negative numbers of people.
+8. Calculate the tip amount.
+9. Calculate the total bill.
+10. Calculate the amount each person must pay.
+11. Format all monetary amounts to two decimal places.
+12. Display helpful error messages when inputs are invalid.
+13. Write at least five test cases to verify the calculations.
+
+EXAMPLE:
+
+Bill amount: 1500
+Tip percentage: 10
+Number of people: 3
+
+Expected output:
+
+Subtotal: 1500.00
+Tip: 150.00
+Total bill: 1650.00
+Each person pays: 550.00
+
+BONUS CHALLENGES:
+
+1. Allow multiple items to be added to the bill.
+2. Apply a discount before calculating the tip.
+3. Generate a receipt containing the subtotal, discount, tip and final total.
+4. Create a simple HTML/CSS interface for the calculator.
+5. Add buttons to increase or decrease the number of people.
+6. Prevent invalid values from being submitted through the interface.
+
+--------------------------------------------------
+DAILY PRACTICE METHOD
+--------------------------------------------------
+
+For every exercise:
+
+1. Read the problem carefully.
+2. Write down the expected output before executing the code.
+3. Attempt the solution independently for at least 20 minutes.
+4. Run your code and check the output.
+5. Fix errors by reading the error message and inspecting variables.
+6. Explain your solution in your own words.
+7. Reattempt the problem the next day without looking at your previous code.
+
+IMPORTANT:
+Do not aim to finish all exercises in one day. Focus on understanding the logic behind each solution.
+
+When stuck, ask for a hint first instead of asking for the complete solution.
