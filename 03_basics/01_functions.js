@@ -18,3 +18,15 @@ loginUserMessage("hitesh");
 console.log(loginUserMessage());
 
 
+//REST OPERATOR
+function add(val1,val2,...num1){
+
+    return [num1,val1,val2];
+}
+
+console.log(add(1,2,3,4));
+
+//SPREAD OPERATOR
+const numbers = [10, 20, 30, 40];
+
+console.log(...numbers);
