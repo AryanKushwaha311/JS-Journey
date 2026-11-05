@@ -49,3 +49,15 @@ const four = (num1,num2) => (num1 + num2) ;
 /* NOTE: {} mai rakha toh "return" krna padega 
          () mai "return" nhi use krna (IMPLICIT RETURN).
 */
+
+
+// object inside arrow function (IMPORTANT)
+const user = () =>({
+    username : "aryan",
+    price : 99,
+
+    welcomeMessage : function(){
+        console.log(`${this.username} , welcome to website`);
+        console.log(this);
+    }
+})
