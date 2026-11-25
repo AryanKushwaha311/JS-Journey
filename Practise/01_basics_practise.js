@@ -1,23 +1,57 @@
-// console.log(typeof null);
-// console.log(typeof NaN);
-// console.log( Number("25"));
-// console.log(Number("25abc"));
-// console.log( Boolean("false"));
+// /*
+// function:-
+// 1.Anonymous Function
+// cd(result()) ->execute and print the return value of the function
+// */
+
+// // const result = function(){
+// //     console.log("hello");
+// //     return 110;
+// // };
+
+// // console.log(result());
+
+// /*
+// 2. REST OPERATOR:-
+// when you have a function but dont know how many number of times a parameter comes
+// */
+
+// const greet = function(...num){
+//     console.log(num);
+// }
+
+// console.log(greet(2,3,1,2));
+
+// /*
+// SPREAD OPERATOR : Suppose we have an array and want to expant it.
+// */
+
+// const arr = [1,2,4,5];
+// console.log(...arr);
 
 
-// console.log(5 == "5");
-// console.log(5 === "5");
-// console.log(0 == false);
-// console.log(null == undefined);
-// console.log(null === undefined);
 
-const ageInput = "21";
-const age = Number(ageInput);
 
-else if(age >= 18){
-    console.log("Eligible for Registration...");
+// GLOBAL SCOPE
+
+const username = "Aryan";
+function greet(){
+    console.log(username);
 }
-else{
-    console.log("Not Eligible for Registration...");
-}
+greet();
 
+console.log(username);
+
+
+
+// LOCAL SCOPE
+
+const username2 = "Aryan";
+function greet(){
+    let x = 50;
+    console.log(x);
+    console.log(username2);
+}
+greet();
+
+console.log(username2);
