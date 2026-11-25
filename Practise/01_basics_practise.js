@@ -34,24 +34,35 @@
 
 // GLOBAL SCOPE
 
-const username = "Aryan";
-function greet(){
-    console.log(username);
+// const username = "Aryan";
+// function greet(){
+//     console.log(username);
+// }
+// greet();
+
+// console.log(username);
+
+
+
+// // LOCAL SCOPE
+
+// const username2 = "Aryan";
+// const x = 23;
+// function greet(){
+//     const x = 50;
+//     console.log(x);
+//     console.log(username2);
+// }
+// greet();
+
+// console.log(x);
+// console.log(username2);
+
+// console.log("hello");
+
+if(true){
+    const user = "Taran";
+    console.log(user);
 }
-greet();
 
-console.log(username);
-
-
-
-// LOCAL SCOPE
-
-const username2 = "Aryan";
-function greet(){
-    let x = 50;
-    console.log(x);
-    console.log(username2);
-}
-greet();
-
-console.log(username2);
+// console.log(user);
